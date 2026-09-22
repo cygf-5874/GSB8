@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>暮影地牢 · Twilight Dungeon</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div id="game">
+
+  <!-- 顶部资源栏 -->
+  <header id="topbar">
+    <div class="res" title="金币"><span class="ri ri-gold"></span><b id="r-gold">0</b></div>
+    <div class="res" title="钢铁"><span class="ri ri-steel"></span><b id="r-steel">0</b></div>
+    <div class="res" title="魂火（招魂塔产出，可复活英雄/招募）"><span class="ri ri-soul"></span><b id="r-soulfire">0</b></div>
+    <div class="res" title="经验（提升灵魂等级）"><span class="ri ri-xp"></span><b id="r-xp">0</b></div>
+    <div class="res" title="材料（升级建筑）"><span class="ri ri-mat"></span><b id="r-mat">0</b></div>
+    <div class="res" title="钻石"><span class="ri ri-gem"></span><b id="r-gem">0</b></div>
+    <div class="top-actions">
+      <button id="btn-mute" class="icon-btn" title="音效">♪</button>
+      <button id="btn-help" class="icon-btn" title="帮助">?</button>
+      <button id="btn-reset" class="icon-btn danger" title="重置存档">⟲</button>
+    </div>
+  </header>
+
+  <!-- 城堡管理区 -->
+  <section id="castle">
+    <div class="section-title">
+      <h2>暮影城堡</h2>
+      <div class="pop-info"><span id="pop-used">0</span>/<span id="pop-cap">10</span> 工匠</div>
+    </div>
+    <div id="buildings" class="building-grid"></div>
+    <div class="idle-tip" id="idle-tip">挂机产出中…</div>
+  </section>
+
+  <!-- 冒险地图区 -->
+  <section id="mapwrap">
+    <div class="section-title">
+      <h2 id="region-name">腐朽墓园</h2>
+      <div class="map-actions">
+        <button id="btn-region" class="mini-btn">大陆地图</button>
+      </div>
+    </div>
+    <div id="map" class="map-view"></div>
+  </section>
+
+  <!-- 队伍状态栏 -->
+  <footer id="partybar">
+    <div id="party-slots"></div>
+    <button id="btn-ult" class="ult-btn" disabled><span class="ult-label">战吼</span><span class="ult-charge"><i id="ult-fill"></i></span></button>
+    <button id="btn-heal" class="heal-btn" title="在城堡休整：缓慢恢复生命">休整</button>
+  </footer>
+</div>
+
+<!-- 弹窗容器 -->
+<div id="modal-root"></div>
+
+<!-- 战斗覆盖层 -->
+<div id="battle-root"></div>
+
+<!-- 飘字提示 -->
+<div id="toast-root"></div>
+
+<!-- 收获弹窗占位 -->
+
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
