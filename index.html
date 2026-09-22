@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>暗渊城堡 · Dark Abyss Keep</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- 资源信息区（顶部边缘） -->
+  <header id="resource-bar">
+    <div class="res" id="res-gold"   title="金币"><span class="ico">&#128184;</span><b>0</b></div>
+    <div class="res" id="res-iron"   title="钢铁"><span class="ico">&#9939;</span><b>0</b></div>
+    <div class="res" id="res-gem"    title="钻石"><span class="ico">&#128142;</span><b>0</b></div>
+    <div class="res" id="res-soul"   title="魂火"><span class="ico">&#128293;</span><b>0</b></div>
+    <div class="res" id="res-timber" title="建材"><span class="ico">&#129717;</span><b>0</b></div>
+  </header>
+
+  <!-- 城堡管理区（上半部分，建筑分布） -->
+  <section id="castle">
+    <div class="castle-sky"></div>
+    <div id="buildings">
+      <div class="building" id="b-manor" data-building="manor">
+        <div class="b-icon">&#127984;</div><div class="b-name">庄园</div>
+        <div class="b-lv">Lv.1</div><div class="b-badge"></div>
+      </div>
+      <div class="building" id="b-tower" data-building="tower">
+        <div class="b-icon">&#128332;</div><div class="b-name">招魂塔</div>
+        <div class="b-lv">Lv.1</div><div class="b-badge"></div>
+      </div>
+      <div class="building" id="b-smith" data-building="smith">
+        <div class="b-icon">&#9874;</div><div class="b-name">铁匠铺</div>
+        <div class="b-lv">Lv.1</div><div class="b-badge"></div>
+      </div>
+      <div class="building" id="b-guild" data-building="guild">
+        <div class="b-icon">&#127962;</div><div class="b-name">冒险者公会</div>
+        <div class="b-lv">Lv.1</div><div class="b-badge"></div>
+      </div>
+    </div>
+    <div id="idle-gain-tip"></div>
+  </section>
+
+  <!-- 冒险地图区（中部） -->
+  <section id="map-area">
+    <div id="map-header">
+      <span id="map-title">幽暗密林 · 第1层</span>
+      <button id="btn-next-floor" class="mini-btn hidden">前往下一层 &rarr;</button>
+    </div>
+    <div id="map-nodes"></div>
+  </section>
+
+  <!-- 队伍状态栏（底部） -->
+  <footer id="party-bar">
+    <div id="soul-lv-tip" title="灵魂等级（全员共享）">魂 Lv.1</div>
+    <div id="party-slots"></div>
+    <button id="btn-war-cry" class="hidden">战吼!</button>
+  </footer>
+
+  <!-- 战斗遮罩层 -->
+  <div id="battle-layer" class="hidden">
+    <div id="battle-field">
+      <div id="battle-enemies"></div>
+      <div id="battle-effects"></div>
+      <div id="battle-heroes"></div>
+    </div>
+    <div id="battle-log"></div>
+  </div>
+
+  <!-- 通用弹窗 -->
+  <div id="modal-mask" class="hidden">
+    <div id="modal">
+      <div id="modal-title"></div>
+      <div id="modal-body"></div>
+      <div id="modal-foot"></div>
+    </div>
+  </div>
+
+  <div id="toast"></div>
+</div>
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/combat.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
